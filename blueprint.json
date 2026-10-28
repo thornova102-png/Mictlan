@@ -12,9 +12,13 @@
       "extractToPath": "/wordpress"
     },
     {
+      "step": "mkdir",
+      "path": "/wordpress/wp-content/mu-plugins"
+    },
+    {
       "step": "writeFile",
       "path": "/wordpress/wp-content/mu-plugins/ocultar-admin.php",
-      "data": "<?php add_filter('show_admin_bar', '__return_false'); add_action('admin_init', function(){ if (!wp_doing_ajax()) { wp_redirect(home_url('/')); exit; } });"
+      "data": "<?php add_filter('show_admin_bar', '__return_false', 9999); add_action('wp_head', function(){ echo '<style>#wpadminbar{display:none!important} html{margin-top:0!important}</style>'; }, 9999); add_action('admin_init', function(){ if (!wp_doing_ajax()) { wp_redirect(home_url('/')); exit; } });"
     }
   ]
 }
