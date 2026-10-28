@@ -9,6 +9,10 @@
         "url": "https://raw.githubusercontent.com/thornova102-png/Mictlan/main/misitio.zip"
       },
       "extractToPath": "/wordpress"
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php require_once '/wordpress/wp-load.php'; wp_set_password('PonAquiUnaClaveLarga123!', 1); add_filter('show_admin_bar', '__return_false');"
     }
   ]
 }
