@@ -1,0 +1,14 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "landingPage": "/",
+  "steps": [
+    {
+      "step": "unzip",
+      "zipFile": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/thornova102-png/Mictlan/main/misitio.zip"
+      },
+      "extractToPath": "/wordpress"
+    }
+  ]
+}
